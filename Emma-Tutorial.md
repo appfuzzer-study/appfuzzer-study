@@ -14,7 +14,7 @@ Please follow the instructions online.
 
 Also, you are feel to use our `bash` script, which pre-input all need commands.
 
-Please download our `runEmmaJar.sh` file [here](https://raw.githubusercontent.com/appfuzzer-study/fuzzer-frameworks/gh-pages/runEmmaJar.sh).
+Please download our `runEmmaJar.sh` file [here](runEmmaJar.sh).
 
 The script takes two parameters: the first one is the path of the target Jar file; the second one is the classname of the Main class.
 
