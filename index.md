@@ -2,6 +2,6 @@
 
 
 ### Emma
-Our `FuzzMonInstrumenter` is built upon Emma framework. If you are interested in how Emma works, please refer to our tutorial[./Emma-Tutorial.html]
+Our `FuzzMonInstrumenter` is built upon Emma framework. If you are interested in how Emma works, please refer to our tutorial[https://appfuzzer-study.github.io/fuzzer-frameworks/Emma-Tutorial.html]
 
 
