@@ -61,6 +61,6 @@ STEP 8. Run the `<package-name>-instrumented.apk` with the following statement
 
 Then, start playing around with the app;
 
-For the error "Error: Failed to generate emma coverage. Emma.jar not in the class path?", please download the `emma.jar` from the (official page)[http://emma.sourceforge.net/intro.html] and add the jar to the classpath.
+For the error "Error: Failed to generate emma coverage. Emma.jar not in the class path?", please download the `emma.jar` from the [official page](http://emma.sourceforge.net/intro.html) and add the jar to the classpath.
 
 STEP 9. Once finished, 
