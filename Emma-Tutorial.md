@@ -1,4 +1,4 @@
-In this tutorial, we demonstrate how to use Emma to instrument a jar or an APK file.
+In this tutorial, we demonstrate how to use Emma to instrument a jar or an app.
 
 # Emma
 
@@ -18,4 +18,13 @@ Please download our `runEmmaJar.sh` file [here](runEmmaJar.sh).
 
 The script takes two parameters: the first one is the path of the target Jar file; the second one is the classname of the Main class.
 
-# Instrument an APK file 
+# Instrument an app
+
+To instrument an app, 
+
+1. Download the [Instrumentation.zip](Instrumentation.zip) file and uncompress it;
+
+2. Copy `EmmaInstrumentation.java`, `FinishListener.java` and `SMSInstrumentedReceiver.java` to the root of the `src` folder. For example, the path for the `EmmaInstrumentation.java` should be <package-name>/EmmaInstrumentation.java;
+
+3.
+  
