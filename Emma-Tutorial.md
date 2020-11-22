@@ -57,10 +57,10 @@ STEP 7. Install the `<package-name>-instrumented.apk` to your AVD (Android Virtu
 
 STEP 8. Run the `<package-name>-instrumented.apk` with the following statement
 
-      
       `adb shell am instrument -e coverage true -w <package_name>/<package_name>.EmmaInstrument.EmmaInstrumentation`
 
 Then, start playing around with the app;
 
-       
+For the error "Error: Failed to generate emma coverage. Emma.jar not in the class path?", please download the `emma.jar` from the (official page)[http://emma.sourceforge.net/intro.html] and add the jar to the classpath.
+
 STEP 9. Once finished, 
