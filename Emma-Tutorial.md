@@ -25,10 +25,15 @@ For example, `bash ./runEmmaJar.sh Test.jar Test`.
 To instrument an open-source app, 
 
 STEP 1. Download the [Instrumentation.zip](Instrumentation.zip) file and uncompress it;
+
 STEP 2. Create a new directory named `EmmaInstrumentation` under the package. For example, if your package name is `a.b`, then create a folder under `b`;
+
 STEP 3. Copy `EmmaInstrumentation.java`, `FinishListener.java`, `InstrumentedActivity.java` and `SMSInstrumentedReceiver.java` to the `EmmaInstrumentation` folder. For example, the path for the `EmmaInstrumentation.java` should be <package-name>/EmmaInstrumentation/EmmaInstrumentation.java;
+  
 STEP 4. Open the `InstrumentedActivity.java` and revise it based on the inside instruction;
+
 STEP 5. Revise the `AndroidManifest.xml` as:
+
   a) Place the following nodes under the `Application` node
    
   ```
@@ -45,4 +50,5 @@ STEP 5. Revise the `AndroidManifest.xml` as:
   ```
   <instrumentation android:handleProfiling="true" android:label="EmmaInstrumentation" android:name="<package-name>.EmmaInstrument.EmmaInstrumentation" android:targetPackage="<package-name>"/>
   ```
+  
 STEP 6. Build the app and generate an APK and name it as `<package-name>-instrumented.apk`;  
