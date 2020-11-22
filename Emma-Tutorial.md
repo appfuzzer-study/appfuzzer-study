@@ -30,6 +30,7 @@ To instrument an open-source app,
 4. Open the `InstrumentedActivity.java` and revise it based on the inside instruction;
 5. Revise the `AndroidManifest.xml` as:
   a) Place the following nodes under the `Application` node
+  
   ```
   <receiver android:name="<package-name>.EmmaInstrument.SMSInstrumentedReceiver">
   <intent-filter>
@@ -40,7 +41,9 @@ To instrument an open-source app,
   ```
   
   b) Place the following node under the root (i.e., manifest node)
+  
   ```
   <instrumentation android:handleProfiling="true" android:label="EmmaInstrumentation" android:name="<package-name>.EmmaInstrument.EmmaInstrumentation" android:targetPackage="<package-name>"/>
   ```
+  
 6. Build the app and generate an APK and name it as `<package-name>-instrumented.apk`;  
