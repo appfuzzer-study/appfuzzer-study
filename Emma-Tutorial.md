@@ -12,19 +12,21 @@ The *quick start* page [http://emma.sourceforge.net/intro.html](http://emma.sour
 
 Please follow the instructions online.
 
-Also, you are feel to use our `bash` script, which pre-input all need commands.
+Also, you are feel to use our `bash` script, which pre-input all needed commands.
 
 Please download our `runEmmaJar.sh` file [here](runEmmaJar.sh).
 
 The script takes two parameters: the first one is the path of the target Jar file; the second one is the classname of the Main class.
 
-# Instrument an app
+For example, `bash ./runEmmaJar.sh Test.jar Test`.
 
-To instrument an app, 
+# Instrument an open-source app
+
+To instrument an open-source app, 
 
 1. Download the [Instrumentation.zip](Instrumentation.zip) file and uncompress it;
-
 2. Copy `EmmaInstrumentation.java`, `FinishListener.java` and `SMSInstrumentedReceiver.java` to the root of the `src` folder. For example, the path for the `EmmaInstrumentation.java` should be <package-name>/EmmaInstrumentation.java;
-
-3.
-  
+3. Revise the `AndroidManifest.xml` file by adding the following items:
+  ```
+  FFF
+  ```
