@@ -25,8 +25,22 @@ For example, `bash ./runEmmaJar.sh Test.jar Test`.
 To instrument an open-source app, 
 
 1. Download the [Instrumentation.zip](Instrumentation.zip) file and uncompress it;
-2. Copy `EmmaInstrumentation.java`, `FinishListener.java` and `SMSInstrumentedReceiver.java` to the root of the `src` folder. For example, the path for the `EmmaInstrumentation.java` should be <package-name>/EmmaInstrumentation.java;
-3. Revise the `AndroidManifest.xml` file by adding the following items:
+2. Create a new directory named `EmmaInstrumentation` under the package. For example, if your package name is `a.b`, then create a folder under `b`;
+3. Copy `EmmaInstrumentation.java`, `FinishListener.java`, `InstrumentedActivity.java` and `SMSInstrumentedReceiver.java` to the `EmmaInstrumentation` folder. For example, the path for the `EmmaInstrumentation.java` should be <package-name>/EmmaInstrumentation/EmmaInstrumentation.java;
+4. Open the `InstrumentedActivity.java` and revise it based on the inside instruction;
+5. Revise the `AndroidManifest.xml` as:
+  a) Place the following nodes under the `Application` node
   ```
-  FFF
+  <receiver android:name="<package-name>.EmmaInstrument.SMSInstrumentedReceiver">
+  <intent-filter>
+  <action android:name="edu.gatech.m3.emma.COLLECT_COVERAGE"/>
+  </intent-filter>
+  </receiver>
+  <activity android:label="EmmaInstrumentationActivity" android:name="<package-name>.EmmaInstrument.InstrumentedActivity"/>
   ```
+  
+  b) Place the following node under the root (i.e., manifest node)
+  ```
+  <instrumentation android:handleProfiling="true" android:label="EmmaInstrumentation" android:name="<package-name>.EmmaInstrument.EmmaInstrumentation" android:targetPackage="<package-name>"/>
+  ```
+6. Build the app and generate an APK and name it as `<package-name>-instrumented.apk`;  
