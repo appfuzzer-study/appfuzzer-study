@@ -26,9 +26,9 @@ To instrument an open-source app,
 
 STEP 1. Download the [Instrumentation.zip](Instrumentation.zip) file and uncompress it;
 
-STEP 2. Create a new directory named `EmmaInstrumentation` under the package. For example, if your package name is `a.b`, then create a folder under `b`;
+STEP 2. Create a new directory named `EmmaInstrument` under the package. For example, if your package name is `a.b`, then create a folder under `b`;
 
-STEP 3. Copy `EmmaInstrumentation.java`, `FinishListener.java`, `InstrumentedActivity.java` and `SMSInstrumentedReceiver.java` to the `EmmaInstrumentation` folder. For example, the path for the `EmmaInstrumentation.java` should be <package-name>/EmmaInstrumentation/EmmaInstrumentation.java;
+STEP 3. Copy `EmmaInstrumentation.java`, `FinishListener.java`, `InstrumentedActivity.java` and `SMSInstrumentedReceiver.java` to the `EmmaInstrument` folder. For example, the path for the `EmmaInstrumentation.java` should be <package-name>/EmmaInstrumentation/EmmaInstrumentation.java;
   
 STEP 4. Open the `InstrumentedActivity.java` and revise it based on the inside instruction;
 
