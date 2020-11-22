@@ -56,9 +56,11 @@ STEP 6. Build the app and generate an APK and name it as `<package-name>-instrum
 STEP 7. Install the `<package-name>-instrumented.apk` to your AVD (Android Virtual Machine). WARNING: do not play around at this step, just install it;
 
 STEP 8. Run the `<package-name>-instrumented.apk` with the following statement
+
       
       `adb shell am instrument -e coverage true -w <package_name>/<package_name>.EmmaInstrument.EmmaInstrumentation`
 
-       Start playing around with the app;
+Then, start playing around with the app;
+
        
-STEP 9. 
+STEP 9. Once finished, 
