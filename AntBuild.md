@@ -16,7 +16,16 @@ Note that the file must be named as `build.xml`.
 
 Note that the `build.xml` in step 1 and 2 is the same. `build.xml` used in step 3 is different from the one in (step 1,2).
 
-## 
+## local.properties
+1. Create a `local.properties` file under the project;
+2. The content of the `local.properties` should be
+
+```
+sdk.dir=/<Your-Android>/Sdk
+
+ndk.dir=/<Your-Android>/android-ndk
+ndk-location=/<Your-Android>/android-ndk
+```
 
 ## Problem Fixing
 Here, we have a list of posts for fixing problems
