@@ -1,19 +1,23 @@
-# Ant Build in Android Studio
-This tutorial shows how to start an Ant build for an Android project inside Android Studio.
+# Ant Build and Instrument
 
-## STEP 1 Install Plugin
-You can search the `Ant Build Generation` plugin from the plugin market in Android Studio.
+## Platform
+We suggest you to use Eclipse + ADT. Even though Android Studio is the main stream for building Android apps, Eclipse + ADT is the best way for Ant build and Ant Instrument.
 
-Install the plugin and restart the Android Studio.
+## Download ADT (Android Developer Toolkit)
+For ADT, you can downloaded it [here](ADT-plugins.zip). After download the ADT, we can place all files under the `plugin` directory in Eclipse. Then, you can use Android feature in Eclipse.
 
-## STEP 2 Initilize a `build.xml` file
-Next, we use `Build->Generate Ant Build...`. In the popup, configure the output as follows:
+## Create Ant build for ADT
+1. Create a `build.xml` under the project;
+2. Make the `build.xml` with the template [here](./template_build.xml);
 
-1. the output file is `build`;
-2. Select `Generate single-build ant file`;
-3. Click `OK`;
+Note that the file must be named as `build.xml`.
 
-Please also reference the attached image;
-![Configurate Build file](./images/build-file.png).
+3. Please also there is an `build.xml` under the path: <Android-SDK>/tools/ant/build.xml.  The `build.xml` should have the content as [this one](,/build.xml);
 
+Note that the `build.xml` in step 1 and 2 is the same. `build.xml` used in step 3 is different from the one in (step 1,2).
 
+## 
+
+## Problem Fixing
+Here, we have a list of posts for fixing problems
+1. [unknown-error-unable-to-build-the-file-dx-jar-was-not-loaded-from-the-sdk-fold](https://stackoverflow.com/questions/43009679/unknown-error-unable-to-build-the-file-dx-jar-was-not-loaded-from-the-sdk-fold)
