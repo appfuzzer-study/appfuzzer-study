@@ -27,6 +27,17 @@ ndk.dir=/<Your-Android>/android-ndk
 ndk-location=/<Your-Android>/android-ndk
 ```
 
+## Ant Instrument
+Next, execute the command `ant instrument` under the project;
+
+As a result, a series of files is generated under the `bin` directory;
+
+## Instrumented APK
+
+1. An instrumented apk named `<Your-project-name>-instrumented.apk` is shown in `bin` folder;
+
+2. A `coverage.em` file is generated;
+
 ## Problem Fixing
 Here, we have a list of posts for fixing problems
 1. [unknown-error-unable-to-build-the-file-dx-jar-was-not-loaded-from-the-sdk-fold](https://stackoverflow.com/questions/43009679/unknown-error-unable-to-build-the-file-dx-jar-was-not-loaded-from-the-sdk-fold)
