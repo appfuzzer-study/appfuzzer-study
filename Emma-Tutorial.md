@@ -58,7 +58,7 @@ STEP 5. Revise the `AndroidManifest.xml` as:
   
 STEP 6. Build the app with `ant instrument`. As a result, the `<Your-app>-instrumented.apk` and `coverage.em` files are generated;
 
-Please reference the [Ant Build](./antBuild.html) on how to accomplish STEP 6. 
+Please reference the [Ant Build](./AntBuild.html) on how to accomplish STEP 6. 
 
 STEP 7. Install the `<package-name>-instrumented.apk` to your AVD (Android Virtual Machine). WARNING: do not play around at this step, just install it;
 
