@@ -88,3 +88,9 @@ Next, you can generate the coverage report the command `java -cp emma.jar emma r
 
 The `coverage.em` and `coverage.ec` are generated in STEP 6 and 10 respectively.
 
+The sample coverage is shown in [coverage-sample/index.html](./coverage-sample/index.html)
+
+---
+
+We also suggest you to reference the [emma_coverage.py](./emma_coverage.py) for how to use Emma. 
+
