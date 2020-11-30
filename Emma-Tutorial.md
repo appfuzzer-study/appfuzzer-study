@@ -70,4 +70,12 @@ Then, start playing around with the app;
 
 For the error "Error: Failed to generate emma coverage. Emma.jar not in the class path?", please download the `emma.jar` from the [official page](http://emma.sourceforge.net/intro.html) and add the jar to the classpath.
 
-STEP 9. Once finished, 
+STEP 9. Once finished, generate the coverage data with the following command (start a new CommandLine window and type the command)
+
+`adb shell am broadcast -a edu.gatech.m3.emma.COLLECT_COVERAGE`
+
+As a result, a file named `coverage.ec` under /mnt/sdcard is genereated.
+
+Then, stop the app.
+
+STEP 10. 
