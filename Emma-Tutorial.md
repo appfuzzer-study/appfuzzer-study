@@ -78,4 +78,13 @@ As a result, a file named `coverage.ec` under /mnt/sdcard is genereated.
 
 Then, stop the app.
 
-STEP 10. 
+STEP 10. Pull the coverage.ec
+
+Pull the `coverage.ec` file to the current directory from device with `adb pull /mnt/sdcard/coverage.ec .`
+
+STEP 11. Generate report
+
+Next, you can generate the coverage report the command `java -cp emma.jar emma report -r html -in coverage.em,coverage.ec`.
+
+The `coverage.em` and `coverage.ec` are generated in STEP 6 and 10 respectively.
+
