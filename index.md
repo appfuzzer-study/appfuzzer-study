@@ -12,4 +12,4 @@ Our `FuzzMonInstrumenter` is built upon Emma framework. If you are interested in
 
 1. APE: The APE can only be used with API >= 20; You should create a AVD with API>=20;
 2. A3E: By default A3E starts a new AVD with name `testAVD`. Set the name of the AVD you want to `testAVD`;
-3. Sapienz: Note that first set the enviroment in the `setting.py` before run the program; Also, replace the APKtool with the latest version;
+3. Sapienz: Note that first set the enviroment in the `setting.py` before run the program; Also, replace the APKtool with the latest version; In addition, you also have to `emulator -gpu off -avd <testAVD> -writeable-system` to launch an AVD as the Spaienz will write file to system.
