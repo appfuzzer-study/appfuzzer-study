@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
+
+<!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <!-- FlexSlider -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"   integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="   crossorigin="anonymous"></script>
+  
+  <title>What Android App Fuzzing Frameworks don't Tell You? </title>
+  <link href="ar.css" rel="stylesheet" type="text/css" />
+
+
+  
+  <meta content="Yutian Tang" name="author" />
+</head>
+
+
+<body>
+
+
+<img style=" height: 100px; float: left;" alt="Logo" src="logo.png" />
+<h1 align="center">What Android App Fuzzing Frameworks don't Tell You?</h1>
+
+
+<br style="clear: left;" />
+
+
+<div id="nav">
+<div class="link"><a href="index.html">Home</a></div>
+
+
+<div class="link"><a href="./emma-tutorial.html">Emma Tutorial</a></div>
+<div class="link"><a href="./ella-tutorial.html">Ella Tutorial</a></div>
+<div class="link"><a href="#">Ant build Tutorial</a></div>
+
+<p align="center">
+<a href="https://sist.shanghaitech.edu.cn"><img style="border: 0px solid ; width: 160px; height: 63px;" src="ShanghaiTechU_logo.svg" alt="ShanghaiTech University" /></a></p>
+
+
+
+</div>
+
+
+<div class="con">
+<h2>Ant Build</h2>
+<h3> Platform</h3>
+
+<p>
+We suggest you to use Eclipse + ADT. Even though Android Studio is the main stream for building Android apps, Eclipse + ADT is the best way for Ant build and Ant Instrument.
+</p>
+
+<h3> Download ADT (Android Developer Toolkit)</h3>
+<p>
+For ADT, you can downloaded it <a href="./ADT-plugins.zip" target="_blank">here</a>. After download the ADT, we can place all files under the <code>plugin</code> directory in Eclipse. Then, you can use Android feature in Eclipse.</p>
+
+<h3> Create Ant build for ADT</h3>
+<ul>
+	<li>1. Create a <code>build.xml</code> under the project;</li>
+	<li>2. Make the <code>build.xml</code> with the template <a href="./template_build.xml" target="_blank">here</a>;</li>
+	Note that the file must be named as <code>build.xml</code>.
+	<li>3. Please also there is an <code>build.xml</code> under the path: {Android-SDK}/tools/ant/build.xml.  The `build.xml` should have the content as <a href="./build.xml" target="_blank">this one</a>;</li>
+	Note that the <code>build.xml</code> in step 1 and 2 is the same. <code>build.xml</code> used in step 3 is different from the one in (step 1,2).
+</ul>
+
+<h3> local.properties</h3>
+<ul>
+	<li>1. Create a <code>local.properties</code> file under the project;</li>
+	<li>2. The content of the <code>local.properties</code> should be</li>
+	<pre>
+		<code>
+sdk.dir=/{Your-Android}/Sdk
+ndk.dir=/{Your-Android}/android-ndk
+ndk-location=/{Your-Android}/android-ndk
+		</code>
+	</pre>
+
+</ul>
+
+<h3> Ant Instrument</h3>
+<p>
+Next, execute the command <code>ant instrument</code> under the project;
+</p>
+
+<p>
+As a result, a series of files is generated under the <code>bin</code> directory;
+</p>
+
+
+<h3> Instrumented APK</h3>
+
+<ul>
+	<li>An instrumented apk named <code>{Your-project-name}-instrumented.apk</code> is shown in <code>bin</code> folder;</li>
+	<li>A <code>coverage.em</code> file is generated;</li>
+
+</ul>
+
+<h3> Problem Fixing </h3>
+Here, we have a list of posts for fixing problems
+
+<ul>
+	<li><a href="https://stackoverflow.com/questions/43009679/unknown-error-unable-to-build-the-file-dx-jar-was-not-loaded-from-the-sdk-fold" target="_blank">unknown-error-unable-to-build-the-file-dx-jar-was-not-loaded-from-the-sdk-fold</a></li>
+
+</ul>
+
+</div>
+
+
+</body>
+</html>

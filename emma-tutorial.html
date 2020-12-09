@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
+
+<!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <!-- FlexSlider -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"   integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="   crossorigin="anonymous"></script>
+  
+  <title>What Android App Fuzzing Frameworks don't Tell You? </title>
+  <link href="ar.css" rel="stylesheet" type="text/css" />
+
+
+  
+  <meta content="Yutian Tang" name="author" />
+</head>
+
+
+<body>
+
+
+<img style=" height: 100px; float: left;" alt="Logo" src="logo.png" />
+<h1 align="center">What Android App Fuzzing Frameworks don't Tell You?</h1>
+
+
+<br style="clear: left;" />
+
+
+<div id="nav">
+	<div class="link"><a href="index.html">Home</a></div>
+
+	<div class="link"><a href="#">Emma Tutorial</a></div>
+	<div class="link"><a href="./ella-tutorial.html">Ella Tutorial</a></div>
+	<div class="link"><a href="./ant-build.html">Ant build Tutorial</a></div>
+
+
+<p align="center">
+<a href="https://sist.shanghaitech.edu.cn"><img style="border: 0px solid ; width: 160px; height: 63px;" src="ShanghaiTechU_logo.svg" alt="ShanghaiTech University" /></a></p>
+
+
+
+</div>
+
+
+<div class="con">
+<h2>Emma</h2>
+
+
+<p class="abstract">
+  Home Page of Emma is <a href="http://emma.sourceforge.net/" target="_blank">http://emma.sourceforge.net/</a>
+
+  EMMA is an open-source toolkit for measuring and reporting Java code coverage. EMMA distinguishes itself from other tools by going after a unique feature combination: support for large-scale enterprise software development while keeping individual developer's work fast and iterative. Every developer on your team can now get code coverage for free and they can get it fast!
+</p>
+
+
+<h2>Instrument a Jar file</h2>
+
+
+<p>The <b>quick start</b> page <a href="http://emma.sourceforge.net/intro.html" target="_blank">http://emma.sourceforge.net/intro.html</a> shows you how to instrument a Jar file and get the coverage.
+
+Please follow the instructions online.
+
+Also, you are feel to use our <code>bash</code> script, which pre-input all needed commands.
+
+Please download our <code>runEmmaJar.sh</code> file <a href="./runEmmaJar.sh" target="_blank">here</a>.
+
+The script takes two parameters: the first one is the path of the target Jar file; the second one is the classname of the Main class.
+
+For example, <code>bash ./runEmmaJar.sh Test.jar Test</code>.
+
+</p>
+
+<h2> Instrument an open-source app</h2>
+
+To instrument an open-source app, 
+
+
+<p><b>STEP 1.</b> Download the <a href="./Instrumentation.zip" target="_blank">Instrumentation.zip</a> file and uncompress it;</p>
+
+
+<p><b>STEP 2.</b> Create a new directory named <code>EmmaInstrument</code> under the package. For example, if your package name is <code>a.b</code>, then create a folder under <code>b</code>;</p>
+
+
+<p><b> STEP 3.</b> Copy <code>EmmaInstrumentation.java, FinishListener.java, InstrumentedActivity.java,SMSInstrumentedReceiver.java</code> to the <b>EmmaInstrument</b> folder. For example, the path for the <code>EmmaInstrumentation.java</code> should be <code>{package-name}/EmmaInstrumentation/EmmaInstrumentation.java</code>;</p>
+  
+<p><b> STEP 4.</b> Open the <code>InstrumentedActivity.java</code> and revise it based on the inside instruction;</p>
+
+<p><b> STEP 5.</b> Revise the <code>AndroidManifest.xml</code> as:</p>
+
+<p>  a) Place the following nodes under the <b>Application</b> node
+<pre>
+	<code>
+ &lt;receiver android:name="&lt;package-name&gt;.EmmaInstrument.SMSInstrumentedReceiver"&gt;
+   &lt;intent-filter&gt;
+    &lt;action android:name="edu.gatech.m3.emma.COLLECT_COVERAGE"/&gt;
+    &lt;/intent-filter&gt;
+ &lt;/receiver&gt;
+ &lt;activity android:label="EmmaInstrumentationActivity" android:name="&lt;package-name&gt;.EmmaInstrument.InstrumentedActivity"/&gt;
+    </code>
+  </pre>
+   
+</p>
+
+<p>  
+  b) Place the following node under the root (i.e., manifest node)
+  
+<pre>
+  <code>&lt;instrumentation android:handleProfiling="true" android:label="EmmaInstrumentation" android:name="&lt;package-name&gt;.EmmaInstrument.EmmaInstrumentation" android:targetPackage="&lt;package-name>"/&gt;
+  </code>
+</pre>
+
+</p>
+
+<p>
+  c) Add required write-to storage permission
+<pre>
+  <code>
+&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
+  </code>
+</pre>
+</p>
+
+<p><b>STEP 6.</b> Build the app with <code>ant instrument</code>. As a result, the <code>&lt;Your-app&gt;-instrumented.apk</code> and <code>coverage.em</code> files are generated;</br></p>
+
+<p>Please reference the <a href="./AntBuild.html" target="_blank">Ant Build</a> on how to accomplish STEP 6. </p>
+
+<p><b>STEP 7.</b> Install the <code>{package-name}-instrumented.apk</code> to your AVD (Android Virtual Machine). WARNING: do not play around at this step, just install it;</p>
+
+<p><b>STEP 8.</b> Run the <code>{package-name}-instrumented.apk</code> with the following statement </p>
+
+<p>
+<code>adb shell am instrument -e coverage true -w {package_name}/{package_name}.EmmaInstrument.EmmaInstrumentation</code> 
+</p>
+
+<p>
+Then, start playing around with the app; 
+</p>
+
+<p>
+For the error "Error: Failed to generate emma coverage. Emma.jar not in the class path?", please download the <code>emma.jar</code> from the <a href="http://emma.sourceforge.net/intro.html" target="_blank">official page</a> and add the jar to the classpath.
+</p>
+
+
+<p><b>STEP 9.</b> Once finished, generate the coverage data with the following command (start a new CommandLine window and type the command)</P>
+
+<p>
+<code>adb shell am broadcast -a edu.gatech.m3.emma.COLLECT_COVERAGE</code>
+</p>
+
+<p>
+As a result, a file named <code>coverage.ec</code> under /mnt/sdcard is genereated. 
+</p>
+
+<p>
+Then, stop the app.</p>
+
+<p><b>STEP 10.</b> Pull the coverage.ec</p>
+
+<p>Pull the <code>coverage.ec</code> file to the current directory from device with <code>adb pull /mnt/sdcard/coverage.ec </code>.</p>
+
+<p><b>STEP 11.</b> Generate report</p>
+
+<p>
+Next, you can generate the coverage report the command <code>java -cp emma.jar emma report -r html -in coverage.em,coverage.ec</code>.</p>
+
+<p>The <i>coverage.em</i> and <i>coverage.ec</i> are generated in STEP 6 and 10 respectively.</p>
+
+<p>The sample coverage is shown in <a href="./coverage-sample/index.html" target="_blank">coverage-sample/index.html</a></p>
+
+<p>
+We also suggest you to reference the <a href="./emma_coverage.py" target="_blank">emma_coverage.py</a> for how to use Emma. </p>
+
+</div>
+
+
+</body>
+</html>

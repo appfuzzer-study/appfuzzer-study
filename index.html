@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
+
+<!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <!-- FlexSlider -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"   integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="   crossorigin="anonymous"></script>
+  
+  <title>What Android App Fuzzing Frameworks don't Tell You? </title>
+  <link href="ar.css" rel="stylesheet" type="text/css" />
+
+
+  
+  <meta content="Yutian Tang" name="author" />
+</head>
+
+
+<body>
+
+
+<img style=" height: 100px; float: left;" alt="Logo" src="logo.png" />
+<h1 align="center">What Android App Fuzzing Frameworks don't Tell You?</h1>
+
+
+<br style="clear: left;" />
+
+
+<div id="nav">
+<div class="link"><a href="#">Home</a></div>
+
+
+<div class="link"><a href="./emma-tutorial.html">Emma Tutorial</a></div>
+<div class="link"><a href="./ella-tutorial.html">Ella Tutorial</a></div>
+<div class="link"><a href="./ant-build.html">Ant build Tutorial</a></div>
+
+<p align="center">
+<a href="https://sist.shanghaitech.edu.cn"><img style="border: 0px solid ; width: 160px; height: 63px;" src="ShanghaiTechU_logo.svg" alt="ShanghaiTech University" /></a></p>
+
+
+
+</div>
+
+
+<div class="con">
+<h3>Emma</h3>
+<p>
+Our FuzzMonInstrumenter is built upon Emma and Ella framework. If you are interested in how Emma and Ella work, please refer to our tutorials: <a href="./emma-tutorial.html" target="_blank">Emma Tutorial</a> and <a href="./ella-tutorial.html" target="_blank"> Ella Tutorial</a>.
+</p>
+
+<h3> FuzzMonInstrumenter</h3>
+
+
+
+<h3>Notes on using these fuzzing frameworks</h3>
+
+<ol>
+	<li>APE: The APE can only be used with API >= 20; You should create a AVD with API>=20;</li>
+	<li>A3E: By default A3E starts a new AVD with name <i>testAVD</i>. Set the name of the AVD you want to <i>testAVD</i>;</li>
+	<li>Sapienz: Note that first set the enviroment in the <i>setting.py</i> before run the program; Also, replace the APKtool with the latest version; In addition, you also have to <code>emulator -gpu off -avd testAVD -writeable-system</code> to launch an AVD as the Spaienz will write file to system.</li>
+</ol>
+
+</div>
+
+
+</body>
+</html>
