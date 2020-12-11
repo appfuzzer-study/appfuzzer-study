@@ -5,10 +5,6 @@
   
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
 
-<!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <!-- FlexSlider -->
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"   integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="   crossorigin="anonymous"></script>
   
   <title>What Android App Fuzzing Frameworks don't Tell You? </title>
   <link href="ar.css" rel="stylesheet" type="text/css" />
@@ -53,6 +49,23 @@
   In this tutorial, we demonstrate how to use Emma to instrument an APK file.
 Note that the <code>ella</code> tool only narrow the coverage to the method level rather than the statement level.
 </p>
+
+<p>The offical tutorial of ella can be found <a href="https://github.com/saswatanand/ella" target="_blank">here</a>.
+
+</p>
+
+<h3>Note on Ella</h3>
+<p>
+	<ol>
+		<li>[Instrumentation]: DO NOT REMOVE any file from the <code>ella-out</code> directory;</li>
+		<li>[Instrumentation]: `bash ella.sh s` to start and use `bash ella.sh k` to end recording after fuzzing;;</li>
+		<li>[Coverage]: `bash ella.sh s` to start and use `bash ella.sh e` to end recording after fuzzing;</li>
+		<li>[Coverage]: the coverage data is named as `...dat**` is generated under one subfolder inside the <code>ella-out</code> directory; For example, under fold `6912ac1fa7c8d3b47cc303ef87acf2a73984c560afdeb18f8def678231d1fe73`, there will be </li>
+	</ol>
+</p>
+
+
+<h3>How to computer coverage with Ella</h3>
 
 
 </div>
