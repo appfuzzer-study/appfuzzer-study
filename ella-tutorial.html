@@ -61,6 +61,7 @@ Note that the <code>ella</code> tool only narrow the coverage to the method leve
 		<li>[Instrumentation]: `bash ella.sh s` to start and use `bash ella.sh k` to end recording after fuzzing;;</li>
 		<li>[Coverage]: `bash ella.sh s` to start and use `bash ella.sh e` to end recording after fuzzing;</li>
 		<li>[Coverage]: the coverage data is named as `...dat**` is generated under one subfolder inside the <code>ella-out</code> directory; For example, under fold `6912ac1fa7c8d3b47cc303ef87acf2a73984c560afdeb18f8def678231d1fe73`, there will be </li>
+		<li>[Error on starting server]: sudo lsof -nPi :yourPortNumber and then kill the process with port defined in ella (sudo kill -9 yourPIDnumber)</li>
 	</ol>
 </p>
 
